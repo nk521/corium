@@ -8,7 +8,7 @@ def test():
     apk_path = "../test.apk"
     #apk_path = "/home/sym/Downloads/share/11/davm/app/com.tmob.AveaOIM.apk"
     apkf = APK(apk_path)
-    print(f"{apkf.cert_text=}")
+    # print(f"{apkf.cert_text=}")
     print(f"{apkf.file_md5=}")
     print(f"{apkf.cert_md5=}")
     print(f"{apkf.file_size=}")

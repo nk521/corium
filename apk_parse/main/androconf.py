@@ -22,6 +22,7 @@ import logging
 import types
 import random
 import string
+from api_specific_resources import *
 
 ANDROGUARD_VERSION = "2.0"
 
@@ -354,3 +355,41 @@ def color_range( startcolor, goalcolor, steps ):
     goal_tuple = make_color_tuple(goalcolor)
 
     return interpolate_tuple(start_tuple, goal_tuple, steps)
+
+def color_range(startcolor, goalcolor, steps):
+    """
+    wrapper for interpolate_tuple that accepts colors as html ("#CCCCC" and such)
+    """
+    start_tuple = make_color_tuple(startcolor)
+    goal_tuple = make_color_tuple(goalcolor)
+
+    return interpolate_tuple(start_tuple, goal_tuple, steps)
+
+
+def load_api_specific_resource_module(resource_name, api=None):
+    """
+    Load the module from the JSON files and return a dict, which might be empty
+    if the resource could not be loaded.
+    If no api version is given, the default one from the CONF dict is used.
+    :param resource_name: Name of the resource to load
+    :param api: API version
+    :return: dict
+    """
+    loader = dict(aosp_permissions=load_permissions,
+                  api_permission_mappings=load_permission_mappings)
+
+    if resource_name not in loader:
+        raise InvalidResourceError("Invalid Resource '{}', not in [{}]".format(resource_name, ", ".join(loader.keys())))
+
+    if not api:
+        api = CONF["DEFAULT_API"]
+
+    ret = loader[resource_name](api)
+
+    if ret == {}:
+        # No API mapping found, return default
+        log.warning("API mapping for API level {} was not found! "
+                    "Returning default, which is API level {}".format(api, CONF['DEFAULT_API']))
+        ret = loader[resource_name](CONF['DEFAULT_API'])
+
+    return ret

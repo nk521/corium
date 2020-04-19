@@ -1,7 +1,7 @@
 import androconf
 from util import read, get_certificate_name_string
 
-from axml import ARSCParser, AXMLPrinter, ARSCResTableConfig, AXMLParser, format_value, START_TAG, END_TAG, TEXT, END_DOCUMENT
+from axml.axml import ARSCParser, AXMLPrinter, ARSCResTableConfig, AXMLParser, format_value, START_TAG, END_TAG, TEXT, END_DOCUMENT
 
 import io
 from zlib import crc32
