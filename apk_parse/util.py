@@ -5,6 +5,7 @@ import asn1crypto
 def read(filename, binary=True):
     """
     Open and read a file
+
     :param filename: filename to open and read
     :param binary: True if the file should be read as binary
     :return: bytes if binary is True, str otherwise
@@ -16,12 +17,15 @@ def read(filename, binary=True):
 def get_certificate_name_string(name, short=False, delimiter=', '):
     """
     Format the Name type of a X509 Certificate in a human readable form.
+
     :param name: Name object to return the DN from
     :param short: Use short form (default: False)
     :param delimiter: Delimiter string or character between two parts (default: ', ')
+
     :type name: dict or :class:`asn1crypto.x509.Name`
     :type short: boolean
     :type delimiter: str
+
     :rtype: str
     """
     if isinstance(name, asn1crypto.x509.Name):
