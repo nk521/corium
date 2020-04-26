@@ -1,0 +1,105 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Applications hide a lot in them. Corium periodically scans them and publish the details online.">
+    <meta name="author" content="Nikhil Kumar">
+    <title>Corium | What this hidin'?</title>
+    <!-- <link rel="canonical" href=""> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Favicons -->
+    <!--
+    <link rel="apple-touch-icon" href="" sizes="180x180">
+    <link rel="icon" href="" sizes="32x32" type="image/png">
+    <link rel="icon" href="" sizes="16x16" type="image/png">
+    <link rel="manifest" href="">
+    <link rel="mask-icon" href="" color="#563d7c">
+    <link rel="icon" href="">
+    -->
+
+    <meta name="theme-color" content="#563d7c">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'corium_app/main.css' %}" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Nav -->
+    <div class="container">
+      <header class="corium-header py-3">
+        <div class="row flex-nowrap justify-content-center align-items-center">
+          <div class="col-4 text-center">
+            <a class="corium-header-logo text-dark" href="#">Corium</a>
+          </div>
+        </div>
+      </header>
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-center">
+          <p class="p-2 text-muted">Last Updated : {{ time }}</p>        
+        </nav>
+      </div>
+    </div>
+
+    <!-- container -->
+    <main role="main" class="container">
+      <!-- row -->
+      <div class="row">
+        <!-- left side -->
+        <div class="col-md-8 py-2 corium-main">
+          <h3 class="pb-4 mb-4 font-italic border-bottom">List of Applications</h3>
+        </div>
+        <!-- end of left side -->
+        
+        <aside class="col-md-4 corium-sidebar">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="font-italic" style="color: #999;">About</h4>
+            <hr>
+            <p class="mb-0">This website tracks the android apps which are listed in the <a href="#">jobs file</a>. This website lists the permissions, privacy policy, TnC and etc of those applications.</p>
+          </div>
+          <div class="p-4 mb-3 bg-light rouded"> 
+            <h4 class="font-italic" style="color: #999;">Contribute</h4>
+            <hr>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/nk521/corium">GitHub</a></li>
+              <li><a href="#">Buy me a coffee</a></li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+      <!-- end row -->
+    </main>
+    <!-- end container -->
+
+    <!-- footer -->
+    <footer class="corium-footer">
+      <div class="inner">
+        <p>
+          Build with ♥ by <a href="https://github.com/nk521">Nikhil Kumar</a>. | Theme by <a href="https://twitter.com/mdo">@mdo</a>.
+        </p>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+  </body>
+</html>
