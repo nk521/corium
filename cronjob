@@ -1,0 +1,1 @@
+00 00 * * * python update.py >> update.log > 2>&1
