@@ -77,6 +77,12 @@ h1, h2, h3, h4, h5, h6 {
   .h-md-250 { height: 250px; }
 }
 
+.corium-list {
+  border-right: none;
+  border-left: none;
+  text-align: center;
+}
+
 /*
  * Footer
  */
