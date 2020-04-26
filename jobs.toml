@@ -1,0 +1,12 @@
+# This is the corium jobs file.
+# Add listing here. Listing should follow this pattern : 
+#
+# [[jobs]]
+# name						= "name"
+# uid						= "com.name.name"
+# privacy_policy 			= "" # if "link" then provide link
+								 # in privacy_policy_link else leave it blank
+# privacy_policy_link 		= ""
+# terms 					= "" # if "link" then provide link
+								 # in privacy_policy_link else leave it blank 
+# terms_link 				= ""

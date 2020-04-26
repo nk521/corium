@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Applications hide a lot in them. Corium periodically scans them and publish the details online.">
     <meta name="author" content="Nikhil Kumar">
-    <title>Corium | What this hidin'?</title>
+    <title>Corium | What's this hidin'?</title>
     <!-- <link rel="canonical" href=""> -->
 
     <!-- Bootstrap core CSS -->
@@ -66,8 +66,8 @@
       <!-- row -->
       <div class="row">
         <!-- left side -->
-        <div class="col-md-8 py-2 main">
-          <h3 class="pb-4 mb-4 font-italic border-bottom">List of Applications</h3>
+        <div class="col-md-8 py-2 my-3 main">
+          <h4 class="pb-3 mb-4 font-italic border-bottom">List of Applications</h4>
           
           <table class="table table-hover">
             <thead style="background-color: #f8f9fa">
@@ -79,27 +79,16 @@
               </tr>
             </thead>
             <tbody>
+              {% for name, data in apps.items %}
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row"><a href={{ data.0 }}>{{ name }}</a></th>
+                <td>{{ data.1 }}</td>
+                <td>{{ data.2 }} - <span style="color: red;">{{ data.3 }}</span></td>
+                <td>{{ data.4 }}</td>
               </tr>
+              {% endfor %}
             </tbody>
           </table>
-
-          <!-- <ul class="container-fluid list-group list-group-horizontal justify-content-center align-items-center">
-            <li class="list-group-item corium-list">Application Name</li>
-            <li class="list-group-item corium-list">Current Version</li>
-            <li class="list-group-item corium-list">Permissions</li>
-            <li class="list-group-item corium-list">Rating</li>
-          </ul>
-          <ul class="list-group list-group-horizontal justify-content-center align-items-center">
-            <li class="list-group-item corium-list">Application Name</li>
-            <li class="list-group-item corium-list">Current Version</li>
-            <li class="list-group-item corium-list">Permissions</li>
-            <li class="list-group-item corium-list">Rating</li>
-          </ul> -->
         </div>
         <!-- end of left side -->
         
